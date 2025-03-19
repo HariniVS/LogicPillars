@@ -1,0 +1,113 @@
+# Your Main Project Heading
+
+## 🧭 **Table of Contents**
+
+* 📖 **Overview**
+    * 💡 [Our Understanding of the Problem](#-our-understanding-of-the-problem)
+    * 👥 [Team Members](#-team-members)
+* ✅ **Requirements**
+    * ⚙️ [Functional Requirements](#-functional-requirements)
+    * ⚡ [Non-Functional Requirements](#-non-functional-requirements)
+    * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
+* 🚀 **Features & Roadmap**
+    * ✨ [Features](#-features)
+    * 🗺️ [Product Roadmap](#-product-roadmap)
+* 🏗️ **Architecture & Design**
+    * 🏢 [C4 Architecture](#-c4-architecture)
+    * 🌐 [System Context Diagram](#-system-context-diagram)
+    * 📦 [Container Diagrams](#-container-diagrams)
+    * 🧩 [Component Diagrams](#-component-diagrams)
+* 📝 **Architecture Decision Records**
+    * 📜 [ADRs](#-architecture-decision-records--adrs-)
+* 💻 **Tech Stack**
+    * 🛠️ [Tech Stack](#-tech-stack)
+* 🧪 **Testing**
+    * 🔬 [Test Cases](#-test-cases)
+* 📦 **Deployment**
+    * 🚀 [Deployment](#-deployment)
+
+## 📖 Overview
+
+### 💡 Our Understanding of the Problem
+
+This solution aims to...
+
+* Provide a solution for...
+* Address the need for...
+* Be developed using...
+
+### 👥 Team Members
+
+* **Balaji Sivakumar**
+* **Pradeep Samuel Daniel**
+* **Harini V S**
+
+## ✅ Requirements
+
+### ⚙️ Functional Requirements
+
+* User shall be able to...
+
+### ⚡ Non-Functional Requirements
+
+* Performance: Response time should be less than 2 seconds.
+
+### 🚧️ Assumptions & Constraints
+
+* Assumptions:
+    * We assume that...
+* Constraints:
+    * Must be compatible with...
+
+## 🚀 Features & Roadmap
+
+### ✨ Features
+
+* Feature 1: Interview scheduling
+* Feature 2: Reporting
+
+### 🗺️ Product Roadmap
+
+* **Phase 1**: MVP development (Q1 2025)
+* **Phase 2**: Feature expansion (Q2 2025)
+* **Phase 3**: Optimization and scaling (Q3 2025)
+
+## 🏗️ Architecture & Design
+
+### 🏢 C4 Architecture
+
+A high-level overview of the system architecture using the C4 model.
+
+### 🌐 System Context Diagram
+
+A diagram showing the system and its external interactions.
+
+### 📦 Container Diagrams
+
+Diagrams showing the containers within the system.
+
+### 🧩 Component Diagrams
+
+Detailed diagrams of the components within each container.
+
+## 📝 Architecture Decision Records (ADRs)
+
+* [ADR 1: Choosing the Database](adrs/0001-choosing-the-database.md)
+
+## 💻 Tech Stack
+
+### 🛠️ Tech Stack
+
+* Programming Language: Python
+
+## 🧪 Testing
+
+### 🔬 Test Cases
+
+* Unit tests for core components.
+* Integration tests for API endpoints.
+* End-to-end tests for user flows.
+
+## 📦 Deployment
+
+### 🚀 Deployment
