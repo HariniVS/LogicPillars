@@ -55,7 +55,13 @@ This solution aims to...
 ### 🚧️ Assumptions & Constraints
 
 * Assumptions:
-    * We assume that...
+    * InterviewLogger System will invoke webhooks set up in the interview service for 2 actions
+      * New Candidate short-listed for the recruitment process
+      * Existing Candidate advanced to the next round
+    * WebHooks invoked by InterviewLogger will carry the interviewee slot preferences, preferred tech stack and other required information for the interview process. This will be captured using offline process and made available through the WebHooks 
+    * MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
+    * Email be used as the primary means of communication for both Interviewer and Interviewee. The preferences will be captured and managed through MindComputeScheduler or equivalent system.
+      
 * Constraints:
     * Must be compatible with...
 
