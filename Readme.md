@@ -7,7 +7,7 @@
     * 👥 [Team Members](#-team-members)
 * ✅ **Requirements**
     * ⚙️ [Functional Requirements](#-functional-requirements)
-    * ⚡ [Non-Functional Requirements](#-non-functional-requirements)
+    * ⚡  [Non-Functional Requirements](#-non-functional-requirements)
     * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
 * 🚀 **Features & Roadmap**
     * ✨ [Features](#-features)
@@ -99,6 +99,7 @@ Detailed diagrams of the components within each container.
 ## 📝 Architecture Decision Records (ADRs)
 
 * [ADR 1: Choosing the Database](adrs/0001-choosing-the-database.md)
+* [ADR 2: Hybrid approach for match-making](adrs/0002-choosing-hybrid-approach-matchmaking.md)
 
 ## 💻 Tech Stack
 
