@@ -8,17 +8,21 @@
 
 [Brief problem description]
 
+## Options Considered
+
+* [Option 1]
+* [Option 2] (Chosen)
+* [Option 3]
+
 ## Decision
 
 [Clear, concise decision]
+
+## Rationale
+
+[Rationale for the decision, including any alternatives considered]
 
 ## Consequences
 
 * **Pros:** [List]
 * **Cons:** [List]
-
-## Options
-
-* [Option 1]
-* [Option 2] (Chosen)
-* [Option 3]
