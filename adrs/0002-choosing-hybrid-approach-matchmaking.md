@@ -1,4 +1,4 @@
-# ADR-0001: Choosing relational database for interview scheduling information
+# ADR-0002: Choosing relational database for interview scheduling information
 
 * **Status:** Accepted
 
