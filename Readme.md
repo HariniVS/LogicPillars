@@ -119,6 +119,10 @@ A diagram showing the system and its external interactions.
 
 ## 📦 Deployment
 
-### 🚀 Deployment
+### 🚀 Deployment & CI/CD Pipeline Overview
+
+This diagram illustrates the end-to-end CI/CD workflow from code commit to deployment across environments. 
+All services are Dockerized, published to a container registry, and automatically deployed through a multi-stage pipeline 
+into dev, staging, and production environments with quality gates.
 
 ![Deployment Pipeline](images/deployment/ci-cd.png)
