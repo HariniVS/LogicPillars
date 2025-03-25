@@ -94,7 +94,25 @@ Diagrams showing the containers within the system.
 
 ### 🧩 Component Diagrams
 
-Detailed diagrams of the components within each container.
+#### 1. **Interview Service - Scheduling Components**
+
+![Interview Scheduling Components](images/architecture/c3-interview-service-scheduling.png)
+
+#### 2. **Profile Search & Assistant Langflow Agent**
+
+![Profile Search & Assistant Langflow Agent](images/architecture/c3-langflowsevice-assistance.png)
+
+#### 3. **DataPipeline for Vector DB**
+
+![DataPipeline for Vector DB](images/architecture/c3-embedding-component.png)
+
+#### 4. **Interview Service - Interview Invites Handling**
+
+![Interview Service - Interview Invites Handling](images/architecture/c3-external-invites-handling.png)
+
+#### 5. **Insights for Recruiters**
+
+![Insights for Recruiters](images/architecture/c3-insights.png)
 
 ## 📝 Architecture Decision Records (ADRs)
 
