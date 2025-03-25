@@ -136,3 +136,5 @@ Diagrams showing the containers within the system.
 ## 📦 Deployment
 
 ### 🚀 Deployment
+
+![Deployment Pipeline](images/deployment/ci-cd.png)
