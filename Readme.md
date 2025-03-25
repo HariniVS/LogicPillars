@@ -5,13 +5,9 @@
 * 📖 **Overview**
     * 💡 [Our Understanding of the Problem](#-our-understanding-of-the-problem)
     * 👥 [Team Members](#-team-members)
-* ✅ **Requirements**
-    * ⚙️ [Functional Requirements](#-functional-requirements)
-    * ⚡  [Non-Functional Requirements](#-non-functional-requirements)
     * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
-* 🚀 **Features & Roadmap**
-    * ✨ [Features](#-features)
-    * 🗺️ [Product Roadmap](#-product-roadmap)
+* 🚀 **Event Storming**
+    * 📜 [Event Storming](#-event-storming)
 * 🏗️ **Architecture & Design**
     * 🏢 [C4 Architecture](#-c4-architecture)
     * 🌐 [System Context Diagram](#-system-context-diagram)
@@ -21,8 +17,6 @@
     * 📜 [ADRs](#-architecture-decision-records--adrs-)
 * 💻 **Tech Stack**
     * 🛠️ [Tech Stack](#-tech-stack)
-* 🧪 **Testing**
-    * 🔬 [Test Cases](#-test-cases)
 * 📦 **Deployment**
     * 🚀 [Deployment](#-deployment)
 
@@ -42,16 +36,6 @@ This solution aims to...
 * **Pradeep Samuel Daniel**
 * **Harini V S**
 
-## ✅ Requirements
-
-### ⚙️ Functional Requirements
-
-* User shall be able to...
-
-### ⚡ Non-Functional Requirements
-
-* Performance: Response time should be less than 2 seconds.
-
 ### 🚧️ Assumptions & Constraints
 
 * Assumptions:
@@ -61,22 +45,8 @@ This solution aims to...
     * WebHooks invoked by InterviewLogger will carry the interviewee slot preferences, preferred tech stack and other required information for the interview process. This will be captured using offline process and made available through the WebHooks 
     * MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
     * Email be used as the primary means of communication for both Interviewer and Interviewee. The preferences will be captured and managed through MindComputeScheduler or equivalent system.
-      
-* Constraints:
-    * Must be compatible with...
 
-## 🚀 Features & Roadmap
-
-### ✨ Features
-
-* Feature 1: Interview scheduling
-* Feature 2: Reporting
-
-### 🗺️ Product Roadmap
-
-* **Phase 1**: MVP development (Q1 2025)
-* **Phase 2**: Feature expansion (Q2 2025)
-* **Phase 3**: Optimization and scaling (Q3 2025)
+## 🚀 Event Storming
 
 ## 🏗️ Architecture & Design
 
