@@ -46,14 +46,11 @@ This solution aims to...
       - Interviewee slot preferences
       - Preferred tech stack
       - Other interview-related information
-
   * MyMindComputeProfile Integration
     - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
-
   * Communication & Scheduling
     - Email will be the primary communication method for both interviewers and interviewees.
     - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
-
 * Constraints:
   * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
