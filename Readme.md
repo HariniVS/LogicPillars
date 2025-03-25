@@ -90,7 +90,7 @@ A diagram showing the system and its external interactions.
 
 ### 📦 Container Diagrams
 
-Diagrams showing the containers within the system.
+![HireIQ Application Containers](images/architecture/c3-container-diagram.png)
 
 ### 🧩 Component Diagrams
 
