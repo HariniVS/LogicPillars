@@ -37,15 +37,32 @@ This solution aims to...
 * **Harini V S**
 
 ### 🚧️ Assumptions & Constraints
+* Assumptions
+  * InterviewLogger Integration
+    - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
+      - A new candidate is shortlisted.
+      - A candidate advances to the next interview round.
+    - Payload will include following information. This data will be collected offline and made available through the webhook.
+      - Interviewee slot preferences
+      - Preferred tech stack
+      - Other interview-related information
 
-* Assumptions:
-    * InterviewLogger System will invoke webhooks set up in the interview service for 2 actions
-      * New Candidate short-listed for the recruitment process
-      * Existing Candidate advanced to the next round
-    * WebHooks invoked by InterviewLogger will carry the interviewee slot preferences, preferred tech stack and other required information for the interview process. This will be captured using offline process and made available through the WebHooks 
-    * MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
-    * Email be used as the primary means of communication for both Interviewer and Interviewee. The preferences will be captured and managed through MindComputeScheduler or equivalent system.
+  * MyMindComputeProfile Integration
+    - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
 
+  * Communication & Scheduling
+    - Email will be the primary communication method for both interviewers and interviewees.
+    - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
+
+* Constraints:
+  * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
+  * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
+    InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
+    In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
+  * Limited explainability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
+    (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
+    traditional rule-based terms.
+  
 ## 🚀 Event Storming
 
 ## 🏗️ Architecture & Design
