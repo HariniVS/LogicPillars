@@ -9,6 +9,8 @@
 * 🚀 **Event Storming**
     * 📜 [Event Storming](#-event-storming)
 * 🏗️ **Architecture & Design**
+    * ✨ [Architectural Characteristics](#-architectural-characteristics)
+    * 🗺️ [Architectural Style](#-architectural-style)
     * 🏢 [C4 Architecture](#-c4-architecture)
     * 🌐 [System Context Diagram](#-system-context-diagram)
     * 📦 [Container Diagrams](#-container-diagrams)
@@ -64,6 +66,40 @@ This solution aims to...
 
 ## 🏗️ Architecture & Design
 
+### ✨ Architectural Characteristics
+
+![Architectural Characteristics](images/architecture/architecture-characteristics.png)
+
+### 🗺️ Architectural Style
+
+#### Key Architectural Styles
+
+The system is built upon a distributed architecture, incorporating several key styles:
+
+* **Microservices Architecture:** The system is decomposed into a suite of services (as seen in the "Services" container), each handling specific business functions. This promotes:
+  * Modularity
+  * Independent deployment
+  * Scalability
+* **API-Driven Architecture:** The system heavily relies on APIs for communication between different components. This enables:
+  * Loose coupling
+  * Re-usability
+  * Integration with external systems
+* **Event-Driven Architecture:** The system uses an "Event Bus," suggesting an event-driven approach. Components communicate asynchronously by producing and consuming events. This improves:
+  * Scalability
+  * Fault tolerance
+  * Responsiveness
+
+#### AI Focus
+
+The architecture highlights a strong emphasis on AI:
+
+* **Embedding Service and Vector DB:** These components enable semantic search and retrieval, allowing the system to understand the meaning of text and match candidates or information more effectively.
+* **LangFlow and AI Agents:** The system uses a workflow engine (LangFlow) to orchestrate AI agents, automating tasks and decision-making.
+
+#### Summary
+
+In summary, the system employs a distributed, microservices-based architecture with a strong focus on APIs and event-driven communication. It leverages AI components to automate and enhance the recruitment process, providing a modern and efficient solution.
+
 ### 🏢 C4 Architecture
 
 A high-level overview of the system architecture using the C4 model.
@@ -102,20 +138,13 @@ A diagram showing the system and its external interactions.
 
 * [ADR 1: Choosing the Database](adrs/0001-choosing-the-database.md)
 * [ADR 2: Hybrid approach for match-making](adrs/0002-choosing-hybrid-approach-matchmaking.md)
+* [ADR 3: Selection of Langflow for AI Agent Creation](adrs/0003-selection-of-langflow-for-ai-agent-creation.md)
 
 ## 💻 Tech Stack
 
 ### 🛠️ Tech Stack
 
 * Programming Language: Python
-
-## 🧪 Testing
-
-### 🔬 Test Cases
-
-* Unit tests for core components.
-* Integration tests for API endpoints.
-* End-to-end tests for user flows.
 
 ## 📦 Deployment
 
