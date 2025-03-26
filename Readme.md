@@ -54,6 +54,9 @@ This solution aims to...
   * Communication & Scheduling
     - Email will be the primary communication method for both interviewers and interviewees.
     - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
+  * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com). 
+    This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to 
+    listen for acceptance or rejection responses from both candidates and interviewers.
 * Constraints:
   * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
@@ -180,7 +183,7 @@ A diagram showing the system and its external interactions.
 
 ### 🛠️ Tech Stack
 
-* Programming Language: Python
+![Tech Stack](images/techstack/techstack.png)
 
 ## 📦 Deployment
 
