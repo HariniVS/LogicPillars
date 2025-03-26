@@ -101,7 +101,7 @@ For a more detailed report on the different iterations, business flows, and the 
 
 ## ✅ NFR and Assumptions
 
-### 🚧️ Non Functional Requirements
+### ⚡️ Non Functional Requirements
 
 * Responsiveness - The system should provide a responsive user experience for recruiters and candidates during profile 
 matching and scheduling interactions. Any delays introduced by AI/LLM components should be gracefully handled with 
@@ -134,6 +134,8 @@ practices.
   * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com).
     This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to
     listen for acceptance or rejection responses from both interviewees and interviewers.
+  * OpenTelemetry (otel) agent will be attached to all deployed services to enable standardized metrics, traces, and logs collection.
+    This ensures the system is observable and supports effective monitoring, debugging, and performance analysis across environments.
 * Constraints:
   * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
@@ -191,29 +193,29 @@ A diagram showing the system and its external interactions.
 
 ### 📦 Container Diagrams
 
-![HireIQ Application Containers](images/architecture/c3-container-diagram.png)
+![HireIQ Application Containers](images/architecture/c4-container-diagram.png)
 
 ### 🧩 Component Diagrams
 
 #### 1. **Interview Service - Scheduling Components**
 
-![Interview Scheduling Components](images/architecture/c3-interview-service-scheduling.png)
+![Interview Scheduling Components](images/architecture/c4-interview-service-scheduling.png)
 
 #### 2. **Profile Search & Assistant Langflow Agent**
 
-![Profile Search & Assistant Langflow Agent](images/architecture/c3-langflowsevice-assistance.png)
+![Profile Search & Assistant Langflow Agent](images/architecture/c4-langflowsevice-assistance.png)
 
 #### 3. **DataPipeline for Vector DB**
 
-![DataPipeline for Vector DB](images/architecture/c3-embedding-component.png)
+![DataPipeline for Vector DB](images/architecture/c4-embedding-component.png)
 
 #### 4. **Interview Service - Interview Invites Handling**
 
-![Interview Service - Interview Invites Handling](images/architecture/c3-external-invites-handling.png)
+![Interview Service - Interview Invites Handling](images/architecture/c4-external-invites-handling.png)
 
 #### 5. **Insights for Recruiters**
 
-![Insights for Recruiters](images/architecture/c3-insights.png)
+![Insights for Recruiters](images/architecture/c4-insights.png)
 
 ## 📝 Architecture Decision Records (ADRs)
 
