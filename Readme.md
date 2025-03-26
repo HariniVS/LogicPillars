@@ -65,8 +65,8 @@ This solution aims to...
   
 ## 🚀 Event Storming
 
-We have used event storming exercise to identify the requirements and discover the domain, we first had a 
-event identification followed by command, event and actor identification, a more detailed report can be found [here](pages/01-event-storming.md).
+We employed Event Storming, a collaborative technique from Domain-Driven Design (DDD), to discover domain requirements and model the system. Our process followed a structured approach: first identifying key domain events, then mapping commands, actors, and their relationships. Through multiple iterations, we derived the major business flows by analyzing the interactions between commands, aggregates, and events.
+
 ### Event Storming Legend
 ![Event Storming Legend](images/event-storming/00-event-storming-legend.png)
 ### Event Identification
@@ -90,7 +90,13 @@ After event storming we have narrowed down on the different business flows
 #### 5. Interview Process
 ![Interview Process](images/event-storming/flows/05-interview-process-flow.png)
 
+#### Conclusion
+As a result of the event storming excercise we have discovered the domain and the requirements for the solution. we have identified two aggregates listed below as the most significant in terms of definite bounded functionalities and transactional boundaries.
 
+1. Interview
+2. Interview Round
+
+for a more detailed report on the different iterations and business flows can be found [here](pages/01-event-storming.md).
 
 ## 🏗️ Architecture & Design
 
@@ -169,7 +175,7 @@ A diagram showing the system and its external interactions.
 * [ADR 1: Choosing the Database](adrs/0001-choosing-the-database.md)
 * [ADR 2: Hybrid approach for match-making](adrs/0002-choosing-hybrid-approach-matchmaking.md)
 * [ADR 3: Selection of Langflow for AI Agent Creation](adrs/0003-selection-of-langflow-for-ai-agent-creation.md)
-
+* [ADR 4: Vector Database](adrs/0004-vector-database.md)
 ## 💻 Tech Stack
 
 ### 🛠️ Tech Stack
