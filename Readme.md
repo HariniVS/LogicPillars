@@ -17,7 +17,7 @@
     * 🌐 [System Context Diagram](#-system-context-diagram)
     * 📦 [Container Diagrams](#-container-diagrams)
     * 🧩 [Component Diagrams](#-component-diagrams)
-    * 🧩 [C4 Diagram Legend](#-c4-diagram-legend)
+    * 📘 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
     * 📜 [ADRs](#-architecture-decision-records--adrs-)
 * 💻 **Tech Stack**
