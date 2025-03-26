@@ -193,6 +193,13 @@ A diagram showing the system and its external interactions.
 
 ### 📦 Container Diagrams
 
+This container architecture outlines the HireIQ matching and scheduling platform, breaking down key systems like 
+interview management, LangFlow-based AI orchestration, embedding pipelines, and observability.
+It shows how external systems like InterviewLogger, Calendar Hub, and LLM providers integrate with internal services to 
+automate match-making and scheduling workflows.
+
+[📦 View Container Architecture Summary](./pages/02-c4-container.md)
+
 ![HireIQ Application Containers](images/architecture/c4-container-diagram.png)
 
 ### 🧩 Component Diagrams
