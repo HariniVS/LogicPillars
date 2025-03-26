@@ -1,6 +1,9 @@
+<p align="center">
+  <img src="images/icons/logo.png" alt="HireIQ" style="width:200px;"/>
+</p>
+
 # HireIQ 
 > AI-Powered Interview Matching and Scheduling Solution
-
 ## 🧭 **Table of Contents**
 
 * 📖 **Overview**
