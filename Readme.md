@@ -107,8 +107,7 @@ For a more detailed report on the different iterations, business flows, and the 
 * Responsiveness - The system should provide a responsive user experience for recruiters and candidates during profile 
 matching and scheduling interactions. Any delays introduced by AI/LLM components should be gracefully handled with 
 fallback messaging or loading states.
-* Scalability - The platform must be able to scale horizontally to handle increases in usage during hiring spikes 
-(e.g., large org onboarding). Key services like embedding processing, match-making, and scheduling should support autoscaling.
+* Scalability - The platform must be able to scale horizontally to handle increases in usage during hiring spikes. Key services like embedding processing, match-making, and scheduling should support autoscaling.
 * Fault Tolerance & Graceful Degradation - Failures in external dependencies (e.g., Calendar Hub, InterviewLogger, LLM API) 
 should not break core workflows. The system should degrade gracefully, offering partial functionality or fallback flows.
 * Auditability & Traceability - AI-generated decisions (e.g., interviewer matching) should be traceable with supporting 
@@ -149,6 +148,7 @@ practices.
 ## 🏗️ Architecture & Design
 
 ### ✨ Architectural Characteristics
+[ADR 5: Architectural Characteristics](adrs/0005-architectural-characteristics.md)
 
 ![Architectural Characteristics](images/architecture/architecture-characteristics.png)
 
