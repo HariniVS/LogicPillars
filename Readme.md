@@ -188,13 +188,14 @@ A high-level overview of the system architecture using the C4 model.
 
 ### 🌐 System Context Diagram
 
-A diagram showing the system and its external interactions.
+The system context diagram provides a high-level view of how the HireIQ matching and scheduling system interacts with 
+external systems, users, and its surrounding ecosystem.
 
 ![HireIQ Application System Context](images/architecture/c4-context-diagram.png)
 
 ### 📦 Container Diagrams
 
-This container architecture outlines the HireIQ matching and scheduling platform, breaking down key systems like 
+This container architecture outlines the HireIQ matching and scheduling system, breaking down key systems like 
 interview management, LangFlow-based AI orchestration, embedding pipelines, and observability.
 It shows how external systems like InterviewLogger, Calendar Hub, and LLM providers integrate with internal services to 
 automate match-making and scheduling workflows.
@@ -205,9 +206,10 @@ automate match-making and scheduling workflows.
 
 ### 🧩 Component Diagrams
 
-This component-level breakdown captures how the HireIQ scheduling system automates interview scheduling and profile matching 
-using LangFlow, vector embeddings, external calendar integrations, and LLM-powered assistants. The diagrams detail 
-internal flows across scheduling, profile search, embedding pipelines, event-driven invites, and recruiter insights.
+This component-level breakdown captures how the HireIQ matching and scheduling system automates interview scheduling and 
+profile matching using LangFlow, vector embeddings, external calendar integrations, and LLM-powered assistants. 
+The diagrams detail internal flows across scheduling, profile search, embedding pipelines, event-driven invites, and 
+recruiter insights.
 
 [📦 View Container Architecture Summary](./pages/02-c4-container.md)
 
