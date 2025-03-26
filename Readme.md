@@ -17,6 +17,7 @@
     * 🌐 [System Context Diagram](#-system-context-diagram)
     * 📦 [Container Diagrams](#-container-diagrams)
     * 🧩 [Component Diagrams](#-component-diagrams)
+    * 🧩 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
     * 📜 [ADRs](#-architecture-decision-records--adrs-)
 * 💻 **Tech Stack**
@@ -204,6 +205,12 @@ automate match-making and scheduling workflows.
 
 ### 🧩 Component Diagrams
 
+This component-level breakdown captures how the HireIQ scheduling system automates interview scheduling and profile matching 
+using LangFlow, vector embeddings, external calendar integrations, and LLM-powered assistants. The diagrams detail 
+internal flows across scheduling, profile search, embedding pipelines, event-driven invites, and recruiter insights.
+
+[📦 View Container Architecture Summary](./pages/02-c4-container.md)
+
 #### 1. **Interview Service - Scheduling Components**
 
 ![Interview Scheduling Components](images/architecture/c4-interview-service-scheduling.png)
@@ -223,6 +230,12 @@ automate match-making and scheduling workflows.
 #### 5. **Insights for Recruiters**
 
 ![Insights for Recruiters](images/architecture/c4-insights.png)
+
+### 📘 C4 Diagram Legend
+
+Legend attached below for interpreting elements like colors, shapes, arrows, and subsystems used in the diagrams.
+
+<img src="images/legend/legend.png" alt="C4 Diagram Legend" width="300" />
 
 ## 📝 Architecture Decision Records (ADRs)
 
