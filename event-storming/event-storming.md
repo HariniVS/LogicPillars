@@ -3,7 +3,7 @@
 
 Event Storming uses a standardized set of colored sticky notes to represent different elements of the business domain:
 
-![Event Storming Legend](../images/event-storming/00-event-storming-legend.png)
+![Event Storming Legend](00-event-storming-legend.png)
 
 - **Orange (Domain Events)**: Something that happened in the system that domain experts care about
 - **Blue (Commands)**: Actions that trigger domain events
@@ -16,7 +16,7 @@ Event Storming uses a standardized set of colored sticky notes to represent diff
 
 The first step in Event Storming is to identify all relevant domain events. Participants write down events on orange sticky notes and place them on the timeline.
 
-![Event Identification](../images/event-storming/01-event-identification.png)
+![Event Identification](01-event-identification.png)
 
 **Process:**
 1. Participants write down significant events in the business domain
@@ -28,7 +28,7 @@ The first step in Event Storming is to identify all relevant domain events. Part
 
 After identifying events, we determine what commands trigger these events and who issues these commands.
 
-![Command, Event and Actor Identification](../images/event-storming/03-aggregate-identification.png)
+![Command, Event and Actor Identification](03-aggregate-identification.png)
 
 **Process:**
 1. For each event, identify the command that caused it (blue sticky notes)
@@ -38,7 +38,7 @@ After identifying events, we determine what commands trigger these events and wh
 5. Connect commands to the events they trigger
 6. This helps identify cause-and-effect relationships in the business process
 ### Ubiquitous Language
-![Ubiquitous Language](../images/event-storming/04-ubiquiteous-language.png)
+![Ubiquitous Language](04-ubiquiteous-language.png)
 
 A critical outcome of Event Storming is the development of a ubiquitous language - a common vocabulary shared by all team members and stakeholders.
 
@@ -49,7 +49,7 @@ A critical outcome of Event Storming is the development of a ubiquitous language
 4. The ubiquitous language evolves as understanding of the domain deepens
 5. It forms the foundation for domain-driven design implementation
 ### Overall Flow
-![Overall Flow](../images/event-storming/05-overall-flow.png)
+![Overall Flow](05-overall-flow.png)
 
 The overall flow represents the complete business process with all elements connected. This provides a comprehensive view of how the system operates.
 
@@ -86,7 +86,7 @@ Below, we provide a detailed analysis of each business flow identified during ou
 
 The interview process begins with the creation of an interview process and the initiation of the first round.
 
-![Starting Interview](../images/event-storming/flows/01-starting-interview-flow.png)
+![Starting Interview](flows/01-starting-interview-flow.png)
 
 **Key Components:**
 - **Trigger**: Need to interview a candidate
@@ -105,7 +105,7 @@ The interview process begins with the creation of an interview process and the i
 
 This flow handles the process of finding and assigning appropriate interviewers based on skills, availability, and other criteria.
 
-![Interviewer Matching](../images/event-storming/flows/02-interviewer-matching-flow.png)
+![Interviewer Matching](flows/02-interviewer-matching-flow.png)
 
 **Key Components:**
 - **Trigger**: Need to assign interviewers to a round
@@ -125,7 +125,7 @@ This flow handles the process of finding and assigning appropriate interviewers 
 
 Once interviewers are assigned, this flow manages the scheduling of the interview round and notification of all participants.
 
-![Interview Scheduling](../images/event-storming/flows/03-scheduling-interview-round-flow.png)
+![Interview Scheduling](flows/03-scheduling-interview-round-flow.png)
 
 **Key Components:**
 - **Trigger**: Interviewers assigned to a round
@@ -145,7 +145,7 @@ Once interviewers are assigned, this flow manages the scheduling of the intervie
 
 This flow handles situations where the initially scheduled interview needs to be rescheduled due to rejections or conflicts.
 
-![Interview Rescheduling](../images/event-storming/flows/04-rescheduling-and-manual-selection-flow.png)
+![Interview Rescheduling](flows/04-rescheduling-and-manual-selection-flow.png)
 
 **Key Components:**
 - **Trigger**: Rejection of interview invitation by any participant
@@ -165,7 +165,7 @@ This flow handles situations where the initially scheduled interview needs to be
 
 This flow covers the execution of the interview round, collection of feedback, and decision-making process.
 
-![Interview Process](../images/event-storming/flows/05-interview-process-flow.png)
+![Interview Process](flows/05-interview-process-flow.png)
 
 **Key Components:**
 - **Trigger**: Confirmed interview round

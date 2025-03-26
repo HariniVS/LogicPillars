@@ -64,7 +64,7 @@ We employed Event Storming, a collaborative technique from Domain-Driven Design 
 - Surfaces inconsistencies and gaps in understanding early
 
 ### Event Storming Legend
-![Event Storming Legend](images/event-storming/00-event-storming-legend.png)
+![Event Storming Legend](event-storming/00-event-storming-legend.png)
 
 Event Storming uses a standardized set of colored sticky notes to represent different elements of the business domain:
 - **Orange**: Domain Events - Something that happened in the system
@@ -73,25 +73,25 @@ Event Storming uses a standardized set of colored sticky notes to represent diff
 - **Purple**: Policies - Business rules that react to events
 - **Pink**: Aggregates - Clusters of related commands and events
 ### Event Identification
-![Event Identification](images/event-storming/01-event-identification.png)
+![Event Identification](event-storming/01-event-identification.png)
 ### Command, Event and Actor Identification
-![Command, Event and Actor Identification](images/event-storming/03-aggregate-identification.png)
+![Command, Event and Actor Identification](event-storming/03-aggregate-identification.png)
 ### Business Flows
 After event storming, we identified five key business flows that represent the core processes of our system. Each flow consists of commands (actions), events (outcomes), and policies (business rules) that govern the process.
 #### 1. Starting Interview
-![Starting Interview](images/event-storming/flows/01-starting-interview-flow.png)
+![Starting Interview](event-storming/flows/01-starting-interview-flow.png)
 
 #### 2. Interviewer Matching
-![Interviewer Matching](images/event-storming/flows/02-interviewer-matching-flow.png)
+![Interviewer Matching](event-storming/flows/02-interviewer-matching-flow.png)
 
 #### 3. Interview Scheduling
-![Interview Scheduling](images/event-storming/flows/03-scheduling-interview-round-flow.png)
+![Interview Scheduling](event-storming/flows/03-scheduling-interview-round-flow.png)
 
 #### 4. Interview Rescheduling
-![Interview Rescheduling](images/event-storming/flows/04-rescheduling-and-manual-selection-flow.png)
+![Interview Rescheduling](event-storming/flows/04-rescheduling-and-manual-selection-flow.png)
 
 #### 5. Interview Process
-![Interview Process](images/event-storming/flows/05-interview-process-flow.png)
+![Interview Process](event-storming/flows/05-interview-process-flow.png)
 
 #### Conclusion
 Through the event storming exercise, we discovered the domain and requirements for our solution. We identified two key aggregates that define our bounded contexts and transactional boundaries:
@@ -101,7 +101,7 @@ Through the event storming exercise, we discovered the domain and requirements f
 
 The event storming process helped us develop a ubiquitous language - a common vocabulary shared by all team members and stakeholders that eliminates translation between business and technical terminology.
 
-For a more detailed report on the different iterations, business flows, and the complete event storming analysis, see [our detailed event storming documentation for HireIQ](pages/01-event-storming.md).
+For a more detailed report on the different iterations, business flows, and the complete event storming analysis, see [our detailed event storming documentation for HireIQ](event-storming/event-storming.md).
 
 ## ✅ NFR and Assumptions
 
@@ -153,7 +153,7 @@ practices.
 ### ✨ Architectural Characteristics
 [ADR 5: Architectural Characteristics](adrs/0005-architectural-characteristics.md)
 
-![Architectural Characteristics](images/architecture/architecture-characteristics.png)
+![Architectural Characteristics](architecture/architecture-characteristics.png)
 
 ### 🗺️ Architectural Style
 
@@ -194,7 +194,7 @@ A high-level overview of the system architecture using the C4 model.
 The system context diagram provides a high-level view of how the HireIQ matching and scheduling system interacts with 
 external systems, users, and its surrounding ecosystem.
 
-![HireIQ Application System Context](images/architecture/c4-context-diagram.png)
+![HireIQ Application System Context](architecture/c4-context-diagram.png)
 
 ### 📦 Container Diagrams
 
@@ -203,9 +203,9 @@ interview management, LangFlow-based AI orchestration, embedding pipelines, and 
 It shows how external systems like InterviewLogger, Calendar Hub, and LLM providers integrate with internal services to 
 automate match-making and scheduling workflows.
 
-[📦 View Container Architecture Summary](./pages/02-c4-container.md)
+[📦 View Container Architecture Summary](architecture/pages/c4-container.md)
 
-![HireIQ Application Containers](images/architecture/c4-container-diagram.png)
+![HireIQ Application Containers](architecture/c4-container-diagram.png)
 
 ### 🧩 Component Diagrams
 
@@ -214,27 +214,27 @@ profile matching using LangFlow, vector embeddings, external calendar integratio
 The diagrams detail internal flows across scheduling, profile search, embedding pipelines, event-driven invites, and 
 recruiter insights.
 
-[📦 View Component Architecture Summary](./pages/03-c4-component.md)
+[📦 View Component Architecture Summary](architecture/pages/c4-component.md)
 
 #### 1. **Interview Service - Scheduling Components**
 
-![Interview Scheduling Components](images/architecture/c4-interview-service-scheduling.png)
+![Interview Scheduling Components](architecture/c4-interview-service-scheduling.png)
 
 #### 2. **Profile Search & Assistant Langflow Agent**
 
-![Profile Search & Assistant Langflow Agent](images/architecture/c4-langflowsevice-assistance.png)
+![Profile Search & Assistant Langflow Agent](architecture/c4-langflowsevice-assistance.png)
 
 #### 3. **DataPipeline for Vector DB**
 
-![DataPipeline for Vector DB](images/architecture/c4-embedding-component.png)
+![DataPipeline for Vector DB](architecture/c4-embedding-component.png)
 
 #### 4. **Interview Service - Interview Invites Handling**
 
-![Interview Service - Interview Invites Handling](images/architecture/c4-external-invites-handling.png)
+![Interview Service - Interview Invites Handling](architecture/c4-external-invites-handling.png)
 
 #### 5. **Insights for Recruiters**
 
-![Insights for Recruiters](images/architecture/c4-insights.png)
+![Insights for Recruiters](architecture/c4-insights.png)
 
 ### 📘 C4 Diagram Legend
 
@@ -254,7 +254,7 @@ Legend attached below for interpreting elements like colors, shapes, arrows, and
 
 ### 🛠️ Tech Stack
 
-![Tech Stack](images/techstack/techstack.png)
+![Tech Stack](techstack/techstack.png)
 
 ## 📦 Deployment
 
@@ -264,7 +264,7 @@ This diagram illustrates the end-to-end CI/CD workflow from code commit to deplo
 All services are Dockerized, published to a container registry, and automatically deployed through a multi-stage pipeline 
 into dev, staging, and production environments with quality gates.
 
-![Deployment Pipeline](images/deployment/ci-cd.png)
+![Deployment Pipeline](deployment/ci-cd.png)
 
 ## 👥 Team Members
 

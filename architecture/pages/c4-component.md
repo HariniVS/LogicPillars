@@ -7,7 +7,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ## 1. 📅 Interview Scheduling Components 
 
-![Interview Scheduling Components](../images/architecture/c4-interview-service-scheduling.png)
+![Interview Scheduling Components](../c4-interview-service-scheduling.png)
 
 - Triggers from InterviewLogger for new candidates or round progression initiate scheduling.
 - LangFlow Assistant coordinates LLM, vector search, and availability lookups.
@@ -18,7 +18,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ## 2. 🤖 LangFlow – Profile Search & Assistance Agent
 
-![LangFlow – Profile Search & Assistance Agent](../images/architecture/c4-interview-service-scheduling.png)
+![LangFlow – Profile Search & Assistance Agent](../c4-interview-service-scheduling.png)
 
 - Handles recruiter prompts for skill search or general assistance via chatbot.
 - Router component directs intent to profile matcher, assistant, or fallback.
@@ -29,7 +29,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ## 3. 🔁 Embedding Service – Vector DB Pipeline
 
-![Embedding Service – Vector DB Pipeline](../images/architecture/c4-interview-service-scheduling.png)
+![Embedding Service – Vector DB Pipeline](../c4-interview-service-scheduling.png)
 
 - MyMindComputeProfile sends profile data (incremental + full load).
 - Embedding Service uses transformer models to convert text to vectors.
@@ -40,7 +40,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ## 4. 📨 Interview Invite Handling (`c4-external-invites-handling.png`)
 
-![Interview Invite Handling](../images/architecture/c4-interview-service-scheduling.png)
+![Interview Invite Handling](../c4-interview-service-scheduling.png)
 
 - Interview Service sends out calendar invites via Calendar Hub API.
 - Webhooks notify the system on accept/reject actions.
@@ -51,7 +51,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ## 5. 📊 Insights for Recruiters (`c4-insights.png`)
 
-![Insights for Recruiters](../images/architecture/c4-interview-service-scheduling.png)
+![Insights for Recruiters](../c4-interview-service-scheduling.png)
 
 - Ingests data from Interview Service, InterviewLogger, MindComputeScheduler, etc.
 - Business Event Emitters and external ingestors populate the analytical DB.

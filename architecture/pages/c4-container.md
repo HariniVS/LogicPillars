@@ -3,7 +3,7 @@
 This document summarizes the core container-level components of the HireIQ Interview matching and scheduling system, 
 as depicted in the C4 container diagram.
 
-![HireIQ Application Containers](../images/architecture/c4-container-diagram.png)
+![HireIQ Application Containers](../c4-container-diagram.png)
 
 ---
 
