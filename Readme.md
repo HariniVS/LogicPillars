@@ -70,14 +70,30 @@ This solution aims to...
 
 We employed Event Storming, a collaborative technique from Domain-Driven Design (DDD), to discover domain requirements and model the system. Our process followed a structured approach: first identifying key domain events, then mapping commands, actors, and their relationships. Through multiple iterations, we derived the major business flows by analyzing the interactions between commands, aggregates, and events.
 
+**What is Event Storming?** A collaborative workshop format for domain exploration that brings together domain experts and technical team members to create a shared understanding of business processes.
+
+**Benefits:**
+- Creates a common language between technical and business stakeholders
+- Provides a visual representation of complex business processes
+- Helps identify bounded contexts and aggregate roots for domain-driven design
+- Enables quick exploration of business processes without technical details
+- Surfaces inconsistencies and gaps in understanding early
+
 ### Event Storming Legend
 ![Event Storming Legend](images/event-storming/00-event-storming-legend.png)
+
+Event Storming uses a standardized set of colored sticky notes to represent different elements of the business domain:
+- **Orange**: Domain Events - Something that happened in the system
+- **Blue**: Commands - Actions that trigger domain events
+- **Yellow**: Actors - Users or systems that issue commands
+- **Purple**: Policies - Business rules that react to events
+- **Pink**: Aggregates - Clusters of related commands and events
 ### Event Identification
 ![Event Identification](images/event-storming/01-event-identification.png)
 ### Command, Event and Actor Identification
 ![Command, Event and Actor Identification](images/event-storming/03-aggregate-identification.png)
-### Flows
-After event storming we have narrowed down on the different business flows
+### Business Flows
+After event storming, we identified five key business flows that represent the core processes of our interview management system. Each flow consists of commands (actions), events (outcomes), and policies (business rules) that govern the process.
 #### 1. Starting Interview
 ![Starting Interview](images/event-storming/flows/01-starting-interview-flow.png)
 
@@ -94,12 +110,14 @@ After event storming we have narrowed down on the different business flows
 ![Interview Process](images/event-storming/flows/05-interview-process-flow.png)
 
 #### Conclusion
-As a result of the event storming excercise we have discovered the domain and the requirements for the solution. we have identified two aggregates listed below as the most significant in terms of definite bounded functionalities and transactional boundaries.
+Through the event storming exercise, we discovered the domain and requirements for our solution. We identified two key aggregates that define our bounded contexts and transactional boundaries:
 
-1. Interview
-2. Interview Round
+1. **Interview** - Manages the overall interview process for a candidate
+2. **Interview Round** - Handles individual interview sessions within the process
 
-for a more detailed report on the different iterations and business flows can be found [here](pages/01-event-storming.md).
+The event storming process helped us develop a ubiquitous language - a common vocabulary shared by all team members and stakeholders that eliminates translation between business and technical terminology.
+
+For a more detailed report on the different iterations, business flows, and the complete event storming analysis, see [our detailed event storming documentation for HireIQ](pages/01-event-storming.md).
 
 ## 🏗️ Architecture & Design
 
