@@ -1,4 +1,5 @@
-# Your Main Project Heading
+# HireIQ 
+> Streamlining interviewer matching and interview scheduling
 
 ## 🧭 **Table of Contents**
 
@@ -64,6 +65,33 @@ This solution aims to...
   
 ## 🚀 Event Storming
 
+We have used event storming exercise to identify the requirements and discover the domain, we first had a 
+event identification followed by command, event and actor identification, a more detailed report can be found [here](pages/01-event-storming.md).
+### Event Storming Legend
+![Event Storming Legend](images/event-storming/00-event-storming-legend.png)
+### Event Identification
+![Event Identification](images/event-storming/01-event-identification.png)
+### Command, Event and Actor Identification
+![Command, Event and Actor Identification](images/event-storming/03-aggregate-identification.png)
+### Flows
+After event storming we have narrowed down on the different business flows
+#### 1. Starting Interview
+![Starting Interview](images/event-storming/flows/01-starting-interview-flow.png)
+
+#### 2. Interviewer Matching
+![Interviewer Matching](images/event-storming/flows/02-interviewer-matching-flow.png)
+
+#### 3. Interview Scheduling
+![Interview Scheduling](images/event-storming/flows/03-scheduling-interview-round-flow.png)
+
+#### 4. Interview Rescheduling
+![Interview Rescheduling](images/event-storming/flows/04-rescheduling-and-manual-selection-flow.png)
+
+#### 5. Interview Process
+![Interview Process](images/event-storming/flows/05-interview-process-flow.png)
+
+
+
 ## 🏗️ Architecture & Design
 
 ### ✨ Architectural Characteristics
@@ -107,6 +135,8 @@ A high-level overview of the system architecture using the C4 model.
 ### 🌐 System Context Diagram
 
 A diagram showing the system and its external interactions.
+
+![HireIQ Application System Context](images/architecture/c4-context-diagram.png)
 
 ### 📦 Container Diagrams
 
