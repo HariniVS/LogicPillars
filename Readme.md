@@ -211,7 +211,7 @@ profile matching using LangFlow, vector embeddings, external calendar integratio
 The diagrams detail internal flows across scheduling, profile search, embedding pipelines, event-driven invites, and 
 recruiter insights.
 
-[📦 View Container Architecture Summary](./pages/02-c4-container.md)
+[📦 View Component Architecture Summary](./pages/03-c4-component.md)
 
 #### 1. **Interview Service - Scheduling Components**
 
