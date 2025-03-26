@@ -1,8 +1,6 @@
 # ADR-0004: Vector Database with Embeddings for Profile Matching
 
 * **Status:** Accepted
-* **Date:** 2025-03-20
-* **Deciders:** [Engineering Team]
 
 ## Context
 

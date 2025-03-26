@@ -1,14 +1,15 @@
 # HireIQ 
-> Streamlining interviewer matching and interview scheduling
+> AI-Powered Interview Matching and Scheduling Solution
 
 ## 🧭 **Table of Contents**
 
 * 📖 **Overview**
     * 💡 [Our Understanding of the Problem](#-our-understanding-of-the-problem)
-    * 👥 [Team Members](#-team-members)
-    * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
 * 🚀 **Event Storming**
     * 📜 [Event Storming](#-event-storming)
+* ✅ **NFR and Assumptions**
+  * ⚡ [Non-Functional Requirements](#-non-functional-requirements)
+  * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
 * 🏗️ **Architecture & Design**
     * ✨ [Architectural Characteristics](#-architectural-characteristics)
     * 🗺️ [Architectural Style](#-architectural-style)
@@ -22,49 +23,28 @@
     * 🛠️ [Tech Stack](#-tech-stack)
 * 📦 **Deployment**
     * 🚀 [Deployment](#-deployment)
+* 👥 **Team Members**
+    * 👥 [Team Members](#-team-members)
 
 ## 📖 Overview
 
 ### 💡 Our Understanding of the Problem
 
-This solution aims to...
+**The Challenge**
 
-* Provide a solution for...
-* Address the need for...
-* Be developed using...
+The core problem is the significant inefficiency and complexity faced by MindCompute recruiters in scheduling technical interviews. The current process is manual, fragmented, and lacks the necessary integration and automation. This results in several key issues:
 
-### 👥 Team Members
+* **Inefficient Interviewer Identification:** Recruiters struggle to find the right interviewers with the necessary skills and availability.
+* **Scheduling Conflicts and Manual Coordination:** The back-and-forth coordination between interviewers and interviewees leads to frequent errors and delays.
+* **Lack of Integration and Data Visibility:** The absence of streamlined integration with existing systems hinders the flow of information and makes it difficult to track the interview process.
+* **Lack of Automated Communication:** Manual communication introduces delays and the potential for miscommunication.
+* **Difficult Reporting and Performance Tracking:** The inability to easily generate reports makes it hard to identify bottlenecks and improve the process.
 
-* **Balaji Sivakumar**
-* **Pradeep Samuel Daniel**
-* **Harini V S**
+**Our Proposal**
 
-### 🚧️ Assumptions & Constraints
-* Assumptions
-  * InterviewLogger Integration
-    - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
-      - A new candidate is shortlisted.
-      - A candidate advances to the next interview round.
-    - Payload will include following information. This data will be collected offline and made available through the webhook.
-      - Interviewee slot preferences
-      - Preferred tech stack
-      - Other interview-related information
-  * MyMindComputeProfile Integration
-    - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
-  * Communication & Scheduling
-    - Email will be the primary communication method for both interviewers and interviewees.
-    - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
-  * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com). 
-    This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to 
-    listen for acceptance or rejection responses from both candidates and interviewers.
-* Constraints:
-  * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
-  * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
-    InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
-    In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
-  * Limited explainability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
-    (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
-    traditional rule-based terms.
+* These issues result in a time-consuming, error-prone, and frustrating experience for both recruiters and interviewees, ultimately impacting the efficiency of the hiring process.
+* To address these issues and streamline the interview scheduling process, we propose an AI-powered interview scheduling solution that leverages automation, AI agents, and integration with existing systems. 
+* The sections to follow capture the event storming, architecture, and design decisions made to build this solution.
   
 ## 🚀 Event Storming
 
@@ -93,7 +73,7 @@ Event Storming uses a standardized set of colored sticky notes to represent diff
 ### Command, Event and Actor Identification
 ![Command, Event and Actor Identification](images/event-storming/03-aggregate-identification.png)
 ### Business Flows
-After event storming, we identified five key business flows that represent the core processes of our interview management system. Each flow consists of commands (actions), events (outcomes), and policies (business rules) that govern the process.
+After event storming, we identified five key business flows that represent the core processes of our system. Each flow consists of commands (actions), events (outcomes), and policies (business rules) that govern the process.
 #### 1. Starting Interview
 ![Starting Interview](images/event-storming/flows/01-starting-interview-flow.png)
 
@@ -112,12 +92,41 @@ After event storming, we identified five key business flows that represent the c
 #### Conclusion
 Through the event storming exercise, we discovered the domain and requirements for our solution. We identified two key aggregates that define our bounded contexts and transactional boundaries:
 
-1. **Interview** - Manages the overall interview process for a candidate
+1. **Interview** - Manages the overall interview process for a interviewee
 2. **Interview Round** - Handles individual interview sessions within the process
 
 The event storming process helped us develop a ubiquitous language - a common vocabulary shared by all team members and stakeholders that eliminates translation between business and technical terminology.
 
 For a more detailed report on the different iterations, business flows, and the complete event storming analysis, see [our detailed event storming documentation for HireIQ](pages/01-event-storming.md).
+
+## ✅ NFR and Assumptions
+
+### 🚧️ Assumptions & Constraints
+* Assumptions
+  * InterviewLogger Integration
+    - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
+      - A new interviewee is shortlisted.
+      - A interviewee advances to the next interview round.
+    - Payload will include following information. This data will be collected offline and made available through the webhook.
+      - Interviewee slot preferences
+      - Preferred tech stack
+      - Other interview-related information
+  * MyMindComputeProfile Integration
+    - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
+  * Communication & Scheduling
+    - Email will be the primary communication method for both interviewers and interviewees.
+    - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
+  * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com).
+    This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to
+    listen for acceptance or rejection responses from both interviewees and interviewers.
+* Constraints:
+  * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
+  * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
+    InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
+    In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
+  * Limited explainability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
+    (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
+    traditional rule-based terms.
 
 ## 🏗️ Architecture & Design
 
@@ -148,7 +157,7 @@ The system is built upon a distributed architecture, incorporating several key s
 
 The architecture highlights a strong emphasis on AI:
 
-* **Embedding Service and Vector DB:** These components enable semantic search and retrieval, allowing the system to understand the meaning of text and match candidates or information more effectively.
+* **Embedding Service and Vector DB:** These components enable semantic search and retrieval, allowing the system to understand the meaning of text and match interviewees or information more effectively.
 * **LangFlow and AI Agents:** The system uses a workflow engine (LangFlow) to orchestrate AI agents, automating tasks and decision-making.
 
 #### Summary
@@ -197,6 +206,8 @@ A diagram showing the system and its external interactions.
 * [ADR 2: Hybrid approach for match-making](adrs/0002-choosing-hybrid-approach-matchmaking.md)
 * [ADR 3: Selection of Langflow for AI Agent Creation](adrs/0003-selection-of-langflow-for-ai-agent-creation.md)
 * [ADR 4: Vector Database](adrs/0004-vector-database.md)
+* [ADR 5: Architectural Characteristics](adrs/0005-architectural-characteristics.md)
+
 ## 💻 Tech Stack
 
 ### 🛠️ Tech Stack
@@ -212,3 +223,9 @@ All services are Dockerized, published to a container registry, and automaticall
 into dev, staging, and production environments with quality gates.
 
 ![Deployment Pipeline](images/deployment/ci-cd.png)
+
+## 👥 Team Members
+
+* **Balaji Sivakumar**
+* **Pradeep Samuel Daniel**
+* **Harini V S**
