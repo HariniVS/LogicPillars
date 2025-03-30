@@ -1,12 +1,10 @@
-# ADR-0002: Choosing relational database for interview scheduling information
+# ADR-0002: Choosing hybrid approach for match making of interviewer
 
 * **Status:** Accepted
 
 ## Context
 
-The interview scheduling application requires capability for the system to perform intelligent match making between datasets of:
-- Filtered Interviewers based on skill set, experience, timeslots
-- Interviewee
+The interview scheduling system requires the capability to intelligently select the most suitable interviewer from a pre-filtered set of interviewers, by matching them against the interviewee's information and requirements.
 
 The process is orchestrated through Lang Flow Agents. As predecessor for match-making the interviewer profiles are already filtered based on skill set, experience and availability. 
 
@@ -23,7 +21,7 @@ The key system requirements include:
 
 ## Decision
 
-RHybrid approach: Combine LLM reasoning with deterministic algorithm
+Hybrid approach: Combine LLM reasoning with deterministic algorithm
 
 ## Rationale
 
