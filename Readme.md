@@ -105,7 +105,7 @@ For a more detailed report on the different iterations, business flows, and the 
 
 ## ✅ NFR and Assumptions
 
-### ⚡️ Non Functional Requirements
+### ⚡ Non Functional Requirements
 
 * Responsiveness - The system should provide a responsive user experience for recruiters and candidates during profile 
 matching and scheduling interactions. Any delays introduced by AI/LLM components should be gracefully handled with 
@@ -119,7 +119,7 @@ metadata and reasoning. System actions (e.g., schedule created, invite rejected)
 securely stored and accessed. The system must support role-based access, data encryption, and comply with GDPR-aligned 
 practices.
 
-### 🚧️ Assumptions & Constraints
+### 🚧 Assumptions & Constraints
 * Assumptions
   * InterviewLogger Integration
     - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
