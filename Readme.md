@@ -22,7 +22,7 @@
     * 🧩 [Component Diagrams](#-component-diagrams)
     * 📘 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
-    * 📜 [ADRs](#-architecture-decision-records--adrs-)
+    * 📜 [ADRs](#-architecture-decision-records-adrs)
 * 💻 **Tech Stack**
     * 🛠️ [Tech Stack](#-tech-stack)
 * 📦 **Deployment**
