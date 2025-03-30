@@ -159,31 +159,31 @@ practices.
 
 #### Key Architectural Styles
 
-The system is built upon a distributed architecture, incorporating several key styles:
+## Architectural Foundation: Event-Driven Intelligence
 
-* **Microservices Architecture:** The system is decomposed into a suite of services (as seen in the "Services" container), each handling specific business functions. This promotes:
-  * Modularity
-  * Independent deployment
-  * Scalability
-* **API-Driven Architecture:** The system heavily relies on APIs for communication between different components. This enables:
-  * Loose coupling
-  * Re-usability
-  * Integration with external systems
-* **Event-Driven Architecture:** The system uses an "Event Bus," suggesting an event-driven approach. Components communicate asynchronously by producing and consuming events. This improves:
-  * Scalability
-  * Fault tolerance
-  * Responsiveness
+At the heart of HireIQ lies an **event-driven architecture**, designed to orchestrate intelligent automation. The **Event Bus** acts as the central nervous system, capturing events and triggering actions across the system. This real-time communication hub allows us to decouple our services, making them more resilient and scalable.
 
-#### AI Focus
+* **Event-Driven Architecture:**
+  * The **Event Bus** captures events from sources like InterviewLogger, triggering asynchronous actions across the system.
+  * This enables scalability, fault tolerance, and real-time responsiveness.
+  * **Event Sourcing** ensures that all changes to the system state are captured as a sequence of events, providing a reliable source for insights and auditing.
 
-The architecture highlights a strong emphasis on AI:
+* **AI-Powered Automation:**
+  * **LangFlow**, a powerful workflow engine, orchestrates AI agents to automate complex scheduling tasks.
+  * Leveraging a **configurable LLM** and the **Profile Vector Database**, LangFlow intelligently matches candidates with suitable interviewers, considering skills, availability, and semantic relevance.
+  * This AI-powered matching significantly reduces manual effort and improves matching accuracy.
 
-* **Embedding Service and Vector DB:** These components enable semantic search and retrieval, allowing the system to understand the meaning of text and match interviewees or information more effectively.
-* **LangFlow and AI Agents:** The system uses a workflow engine (LangFlow) to orchestrate AI agents, automating tasks and decision-making.
+* **Microservices Architecture:**
+  * To achieve modularity and independent scalability, particularly for our AI-driven matching capabilities, we've decomposed the system into microservices.
+  * This approach enhances maintainability and allows for targeted scaling.
 
-#### Summary
+* **API Layer:**
+  * APIs serve as an adapter layer, facilitating communication between microservices and external systems.
+  * This ensures loose coupling and enables seamless integration.
 
-In summary, the system employs a distributed, microservices-based architecture with a strong focus on APIs and event-driven communication. It leverages AI components to automate and enhance the recruitment process, providing a modern and efficient solution.
+## Summary
+
+By prioritizing an event-driven architecture and integrating AI-powered automation, we've created a solution that streamlines the interview scheduling process, reduces scheduling time, and improves interviewer matching accuracy. This architecture provides a modern and efficient solution.
 
 ### 🏢 C4 Architecture
 
