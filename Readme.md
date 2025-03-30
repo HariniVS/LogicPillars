@@ -15,7 +15,7 @@
   * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
 * 🏗️ **Architecture & Design**
     * ✨ [Architectural Characteristics](#-architectural-characteristics)
-    * 🗺️ [Architectural Style](#-architectural-style)
+    * 🗺 [Architectural Style](#-architectural-style)
     * 🏢 [C4 Architecture](#-c4-architecture)
     * 🌐 [System Context Diagram](#-system-context-diagram)
     * 📦 [Container Diagrams](#-container-diagrams)
@@ -161,7 +161,7 @@ practices.
 
 ## Architectural Foundation: Event-Driven Intelligence
 
-At the heart of HireIQ lies an **event-driven architecture**, designed to orchestrate intelligent automation. The **Event Bus** acts as the central nervous system, capturing events and triggering actions across the system. This real-time communication hub allows us to decouple our services, making them more resilient and scalable.
+At the heart of HireIQ lies an **event-driven architecture**, designed to orchestrate intelligent automation. The **Event Bus** acts as the communication backbone, capturing events and triggering actions across the system. This real-time communication hub allows us to decouple our services, making them more resilient and scalable.
 
 * **Event-Driven Architecture:**
   * The **Event Bus** captures events from sources like InterviewLogger, triggering asynchronous actions across the system.
