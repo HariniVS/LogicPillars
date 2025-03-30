@@ -155,7 +155,7 @@ practices.
 
 ![Architectural Characteristics](architecture/architecture-characteristics.png)
 
-### 🗺️ Architectural Style
+### 🗺 Architectural Style
 
 #### Key Architectural Styles
 
