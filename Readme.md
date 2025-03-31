@@ -96,7 +96,7 @@ After event storming, we identified five key business flows that represent the c
 #### Conclusion
 Through the event storming exercise, we discovered the domain and requirements for our solution. We identified two key aggregates that define our bounded contexts and transactional boundaries:
 
-1. **Interview** - Manages the overall interview process for a interviewee
+1. **Interview** - Manages the overall interview process for an interviewee
 2. **Interview Round** - Handles individual interview sessions within the process
 
 The event storming process helped us develop a ubiquitous language - a common vocabulary shared by all team members and stakeholders that eliminates translation between business and technical terminology.
@@ -124,7 +124,7 @@ practices.
   * InterviewLogger Integration
     - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
       - A new interviewee is shortlisted.
-      - A interviewee advances to the next interview round.
+      - An interviewee advances to the next interview round.
     - Payload will include following information. This data will be collected offline and made available through the webhook.
       - Interviewee slot preferences
       - Preferred tech stack
@@ -144,7 +144,7 @@ practices.
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
     InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
     In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
-  * Limited explainability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
+  * Limited explain-ability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
     (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
     traditional rule-based terms.
 
