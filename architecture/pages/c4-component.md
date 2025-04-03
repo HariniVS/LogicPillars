@@ -10,11 +10,11 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 ![Interview Scheduling Components](../c4-interview-service-scheduling.png)
 
 - **Triggers from InterviewLogger** for new candidates or round progression initiate the scheduling workflow.
-- **Filter Interviewers by Skill and Experience** using the `Vector Store Retriever` to retrieve semantically matched profiles from the `Profile Vector DB`.
-- **Feed Retrieved Interviewers to the RAG Prompt Builder**, which builds a prompt combining vector results and query context for the LLM.
+- **Filter Interviewers by Skill and Experience** using the `Matching Profile Retriever` to retrieve semantically matched profiles from the `Profile Vector DB`.
+- **Feed Retrieved Interviewers to the RAG Template**, which builds a prompt combining vector results and query context for the LLM.
 - **Filter Interviewers by Availability** via the `Availability Finder` using data from `MyMindLeave` and `MindComputeScheduler`.
 - **Finalize Interviewer** through the `Match Maker`, considering availability, preferences, and capacity, assisted by the LLM. The Match Maker intelligently combines rule-based matching with an LLM fallback to select interviewers aligned with interviewee preferences and constraints.
-- **Update Interview State** using the `State Updater` to record the finalized interviewer selection and interview status.
+- **Update Interview State** using the `Event Producer` to record the finalized interviewer selection and interview status.
 
 ---
 
@@ -30,7 +30,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
     - Unrecognized queries to the `Fallback Component`.
 - For profile search:
     - **Vector Store Retriever** fetches interviewer profiles from the `Profile Vector DB` based on semantic search.
-    - Retrieved results are fed to the `RAG Prompt Builder` to construct a prompt using the vector context.
+    - Retrieved results are fed to the `RAG Template` to construct a prompt using the vector context.
     - The constructed prompt is processed by the `Configurable LLM` to return suitable interviewer profiles.
 - For general assistance:
     - The system uses the `Knowledge Vector Database` and the `General Assistance` component to respond to recruiter queries.
