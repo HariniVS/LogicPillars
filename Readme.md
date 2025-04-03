@@ -133,7 +133,7 @@ practices.
     - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
   * Communication & Scheduling
     - Email will be the primary communication method for both interviewers and interviewees.
-    - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
+    - Slot preferences, interview capacity and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
   * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com).
     This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to
     listen for acceptance or rejection responses from both interviewees and interviewers.
