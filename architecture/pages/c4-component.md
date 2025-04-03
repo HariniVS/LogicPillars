@@ -13,7 +13,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 - **Filter Interviewers by Skill and Experience** using the `Vector Store Retriever` to retrieve semantically matched profiles from the `Profile Vector DB`.
 - **Feed Retrieved Interviewers to the RAG Prompt Builder**, which builds a prompt combining vector results and query context for the LLM.
 - **Filter Interviewers by Availability** via the `Availability Finder` using data from `MyMindLeave` and `MindComputeScheduler`.
-- **Finalize Interviewer** through the `Match Maker`, considering availability, preferences, and capacity, assisted by the LLM.
+- **Finalize Interviewer** through the `Match Maker`, considering availability, preferences, and capacity, assisted by the LLM. The Match Maker intelligently combines rule-based matching with an LLM fallback to select interviewers aligned with interviewee preferences and constraints.
 - **Update Interview State** using the `State Updater` to record the finalized interviewer selection and interview status.
 
 ---
@@ -50,9 +50,9 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ---
 
-## 4. 📨 Interview Invite Handling (`c4-external-invites-handling.png`)
+## 4. 📨 Interview Invite Handling
 
-![Interview Invite Handling](../c4-interview-service-scheduling.png)
+![Interview Invite Handling](../c4-external-invites-handling.png)
 
 - Interview Service sends out calendar invites via Calendar Hub API.
 - Webhooks notify the system on accept/reject actions.
@@ -61,9 +61,9 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ---
 
-## 5. 📊 Insights for Recruiters (`c4-insights.png`)
+## 5. 📊 Insights for Recruiters
 
-![Insights for Recruiters](../c4-interview-service-scheduling.png)
+![Insights for Recruiters](../c4-insights.png)
 
 - Ingests data from Interview Service, InterviewLogger, MindComputeScheduler, etc.
 - Business Event Emitters and external ingestors populate the analytical DB.
