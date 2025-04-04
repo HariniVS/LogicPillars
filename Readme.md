@@ -250,6 +250,39 @@ Legend attached below for interpreting elements like colors, shapes, arrows, and
 * [ADR 4: Vector Database](adrs/0004-vector-database.md)
 * [ADR 5: Architectural Characteristics](adrs/0005-architectural-characteristics.md)
 
+## Testing & Evaluation Strategy
+
+Since there two types of systems to be tested i.e. business logic and algorithm based processes and AI based processes.
+
+### Business logic & Algorithm Based Processes
+
+Standard unit level and integration level tests will be used to validate all business logic and algorithm based processes.
+
+### AI Based Processes
+
+AI based processes will be tested using specific testing framework such as DeepEval
+
+### Overall Evaluation
+
+Overall E2E performance of the AI components of the system can be evaluated using LLM as a Judge, where a seperate LLM is used to judge the input and output of AI based system.
+
+In this technique a score is used to determine if the output meets the expected criteria.
+
+#### RAG Evaluation
+RAG Based applications can be tested for the following metrics
+
+- Precision: evaluates how well the ranking workes based on the input and if reranking is needed.
+- Recall: evaluates the embedding model on how accurate the retrieval is performed.
+- Relevance: evaluates the text chunking and top K of the retrieved results.
+ 
+
+#### Agent Evaluation
+Agent testing is different from RAG testing as it involves evaluating the agent's performance in a conversation. we can using the following metrics
+
+- Tools called & Expected tools: evaluating the order in which the tools are called by the agent to complete the task.
+- Completion Time: evaluating the time each agent takes to complete the task.
+- Turns: if using a reasoning approach how many turns the agent takes to complete the task. 
+
 ## 💻 Tech Stack
 
 ### 🛠️ Tech Stack
