@@ -15,14 +15,14 @@
   * 🚧 [Assumptions & Constraints](#-assumptions--constraints)
 * 🏗️ **Architecture & Design**
     * ✨ [Architectural Characteristics](#-architectural-characteristics)
-    * 🗺️ [Architectural Style](#-architectural-style)
+    * 🗺 [Architectural Style](#-architectural-style)
     * 🏢 [C4 Architecture](#-c4-architecture)
     * 🌐 [System Context Diagram](#-system-context-diagram)
     * 📦 [Container Diagrams](#-container-diagrams)
     * 🧩 [Component Diagrams](#-component-diagrams)
     * 📘 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
-    * 📜 [ADRs](#-architecture-decision-records--adrs-)
+    * 📜 [ADRs](#-architecture-decision-records-adrs)
 * 💻 **Tech Stack**
     * 🛠️ [Tech Stack](#-tech-stack)
 * 📦 **Deployment**
@@ -96,7 +96,7 @@ After event storming, we identified five key business flows that represent the c
 #### Conclusion
 Through the event storming exercise, we discovered the domain and requirements for our solution. We identified two key aggregates that define our bounded contexts and transactional boundaries:
 
-1. **Interview** - Manages the overall interview process for a interviewee
+1. **Interview** - Manages the overall interview process for an interviewee
 2. **Interview Round** - Handles individual interview sessions within the process
 
 The event storming process helped us develop a ubiquitous language - a common vocabulary shared by all team members and stakeholders that eliminates translation between business and technical terminology.
@@ -105,7 +105,7 @@ For a more detailed report on the different iterations, business flows, and the 
 
 ## ✅ NFR and Assumptions
 
-### ⚡️ Non Functional Requirements
+### ⚡ Non Functional Requirements
 
 * Responsiveness - The system should provide a responsive user experience for recruiters and candidates during profile 
 matching and scheduling interactions. Any delays introduced by AI/LLM components should be gracefully handled with 
@@ -119,12 +119,12 @@ metadata and reasoning. System actions (e.g., schedule created, invite rejected)
 securely stored and accessed. The system must support role-based access, data encryption, and comply with GDPR-aligned 
 practices.
 
-### 🚧️ Assumptions & Constraints
+### 🚧 Assumptions & Constraints
 * Assumptions
   * InterviewLogger Integration
     - InterviewLogger will trigger webhooks to the Interview Scheduling System when:
       - A new interviewee is shortlisted.
-      - A interviewee advances to the next interview round.
+      - An interviewee advances to the next interview round.
     - Payload will include following information. This data will be collected offline and made available through the webhook.
       - Interviewee slot preferences
       - Preferred tech stack
@@ -133,7 +133,7 @@ practices.
     - MyMindComputeProfile Events/APIs will be leveraged/built for bulk and incremental load of the profile information carrying skill set and required details to vector database.
   * Communication & Scheduling
     - Email will be the primary communication method for both interviewers and interviewees.
-    - Slot preferences and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
+    - Slot preferences, interview capacity and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
   * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com).
     This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to
     listen for acceptance or rejection responses from both interviewees and interviewers.
@@ -144,7 +144,7 @@ practices.
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
     InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
     In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
-  * Limited explainability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
+  * Limited explain-ability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
     (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
     traditional rule-based terms.
 
@@ -155,35 +155,35 @@ practices.
 
 ![Architectural Characteristics](architecture/architecture-characteristics.png)
 
-### 🗺️ Architectural Style
+### 🗺 Architectural Style
 
 #### Key Architectural Styles
 
-The system is built upon a distributed architecture, incorporating several key styles:
+## Architectural Foundation: Event-Driven Intelligence
 
-* **Microservices Architecture:** The system is decomposed into a suite of services (as seen in the "Services" container), each handling specific business functions. This promotes:
-  * Modularity
-  * Independent deployment
-  * Scalability
-* **API-Driven Architecture:** The system heavily relies on APIs for communication between different components. This enables:
-  * Loose coupling
-  * Re-usability
-  * Integration with external systems
-* **Event-Driven Architecture:** The system uses an "Event Bus," suggesting an event-driven approach. Components communicate asynchronously by producing and consuming events. This improves:
-  * Scalability
-  * Fault tolerance
-  * Responsiveness
+At the heart of HireIQ lies an **event-driven architecture**, designed to orchestrate intelligent automation. The **Event Bus** acts as the communication backbone, capturing events and triggering actions across the system. This real-time communication hub allows us to decouple our services, making them more resilient and scalable.
 
-#### AI Focus
+* **Event-Driven Architecture:**
+  * The **Event Bus** captures events from sources like InterviewLogger, triggering asynchronous actions across the system.
+  * This enables scalability, fault tolerance, and real-time responsiveness.
+  * **Event Sourcing** ensures that all changes to the system state are captured as a sequence of events, providing a reliable source for insights and auditing.
 
-The architecture highlights a strong emphasis on AI:
+* **AI-Powered Automation:**
+  * **LangFlow**, a powerful workflow engine, orchestrates AI agents to automate complex scheduling tasks.
+  * Leveraging a **configurable LLM** and the **Profile Vector Database**, LangFlow intelligently matches candidates with suitable interviewers, considering skills, availability, and semantic relevance.
+  * This AI-powered matching significantly reduces manual effort and improves matching accuracy.
 
-* **Embedding Service and Vector DB:** These components enable semantic search and retrieval, allowing the system to understand the meaning of text and match interviewees or information more effectively.
-* **LangFlow and AI Agents:** The system uses a workflow engine (LangFlow) to orchestrate AI agents, automating tasks and decision-making.
+* **Microservices Architecture:**
+  * To achieve modularity and independent scalability, particularly for our AI-driven matching capabilities, we've decomposed the system into microservices.
+  * This approach enhances maintainability and allows for targeted scaling.
 
-#### Summary
+* **API Layer:**
+  * APIs serve as an adapter layer, facilitating communication between microservices and external systems.
+  * This ensures loose coupling and enables seamless integration.
 
-In summary, the system employs a distributed, microservices-based architecture with a strong focus on APIs and event-driven communication. It leverages AI components to automate and enhance the recruitment process, providing a modern and efficient solution.
+## Summary
+
+By prioritizing an event-driven architecture and integrating AI-powered automation, we've created a solution that streamlines the interview scheduling process, reduces scheduling time, and improves interviewer matching accuracy. This architecture provides a modern and efficient solution.
 
 ### 🏢 C4 Architecture
 

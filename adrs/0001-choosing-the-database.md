@@ -13,7 +13,7 @@ The key system requirements include:
 - Transactional consistency for the scheduling and rescheduling interviews
 - Support for queries, filters and joins across tables
 - Referential integrity between tables
-- Support for capturing the CDC to enable 
+- Support for capturing database change events through CDC.
 
 ## Decision
 
@@ -23,11 +23,11 @@ Relational Database as the primary datastore for persisting the transactional in
 
 - Structured Schema: The information to be persisted naturally fits to normalized data structures
 - ACID Transaction: Relational databases provided strong ACID compliance
-- Query Support: SQL provides matured querying and indexing capabilitites joining multiple tables
+- Query Support: SQL provides matured querying and indexing capabilities joining multiple tables
 - Community Support: Widely adopted and strong community support available with matured ecosystem
-- CDC Compatability: Relational databases support CDC mechanisms (ex: Debezium) for streaming changes to other systems
+- CDC Compatibility: Relational databases support CDC mechanisms (ex: Debezium) for streaming changes to other systems
 
 ## Consequences
 
-- RDMS scales vertically by default. If the dataset grows rapidly properly scaling techniques should be applied to scale the system (ex: partionioning, views, read replicas etc)
-- Sensitive information should be encryted and follow GDPR complaint storage mechanisms
+- RDMS scales vertically by default. If the dataset grows rapidly properly scaling techniques should be applied to scale the system (ex: partitioning, views, read replicas etc)
+- Sensitive information should be encrypted and follow GDPR complaint storage mechanisms
