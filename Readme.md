@@ -281,6 +281,7 @@ Agent testing is different from RAG testing as it involves evaluating the agent'
 
 - Tools called & Expected tools: evaluating the order in which the tools are called by the agent to complete the task.
 - Completion Time: evaluating the time each agent takes to complete the task.
+- Token Usage: evaluating the number of tokens used by the agent to complete the task.
 - Turns: if using a reasoning approach how many turns the agent takes to complete the task. 
 
 ## 💻 Tech Stack
