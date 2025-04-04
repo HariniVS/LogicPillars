@@ -22,7 +22,7 @@
     * 🧩 [Component Diagrams](#-component-diagrams)
     * 📘 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
-    * 📜 [ADRs](#-architecture-decision-records-adrs)
+    * 📜 [ADRs](#-architecture-decision-records)
 * 🧑‍🔬 **Testing & Evaluation Strategy**
     * 🧪 [Testing & Evaluation Strategy](#-testing--evaluation-strategy)
 * 💻 **Tech Stack**
@@ -244,7 +244,7 @@ Legend attached below for interpreting elements like colors, shapes, arrows, and
 
 <img src="images/legend/legend.png" alt="C4 Diagram Legend" width="300" />
 
-## 📝 Architecture Decision Records (ADRs)
+## 📝 Architecture Decision Records
 
 * [ADR 1: Choosing the Database](adrs/0001-choosing-the-database.md)
 * [ADR 2: Hybrid approach for match-making](adrs/0002-choosing-hybrid-approach-matchmaking.md)
