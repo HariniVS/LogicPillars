@@ -23,6 +23,8 @@
     * 📘 [C4 Diagram Legend](#-c4-diagram-legend)
 * 📝 **Architecture Decision Records**
     * 📜 [ADRs](#-architecture-decision-records-adrs)
+* 🧑‍🔬 **Testing & Evaluation Strategy**
+    * 🧪 [Testing & Evaluation Strategy](#-testing--evaluation-strategy)
 * 💻 **Tech Stack**
     * 🛠️ [Tech Stack](#-tech-stack)
 * 📦 **Deployment**
@@ -250,7 +252,7 @@ Legend attached below for interpreting elements like colors, shapes, arrows, and
 * [ADR 4: Vector Database](adrs/0004-vector-database.md)
 * [ADR 5: Architectural Characteristics](adrs/0005-architectural-characteristics.md)
 
-## Testing & Evaluation Strategy
+## 🧑‍🔬 Testing & Evaluation Strategy
 
 Since there two types of systems to be tested i.e. business logic and algorithm based processes and AI based processes.
 
