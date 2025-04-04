@@ -254,7 +254,7 @@ Legend attached below for interpreting elements like colors, shapes, arrows, and
 
 ## 🧑‍🔬 Testing & Evaluation Strategy
 
-Since there two types of systems to be tested i.e. business logic and algorithm based processes and AI based processes.
+There are two types of systems to be tested i.e. business logic/algorithm based processes and AI based processes.
 
 ### Business logic & Algorithm Based Processes
 
@@ -262,24 +262,22 @@ Standard unit level and integration level tests will be used to validate all bus
 
 ### AI Based Processes
 
-AI based processes will be tested using specific testing framework such as DeepEval
+AI based processes will be tested using specific testing framework called DeepEval
 
 ### Overall Evaluation
 
-Overall E2E performance of the AI components of the system can be evaluated using LLM as a Judge, where a seperate LLM is used to judge the input and output of AI based system.
-
-In this technique a score is used to determine if the output meets the expected criteria.
+Overall E2E performance of the AI components of the system can be evaluated using LLM as a Judge, where a separate LLM is used to judge the input and output of AI based system. In this technique a scorer LLM is used to determine if the output meets the expected criteria.
 
 #### RAG Evaluation
-RAG Based applications can be tested for the following metrics
+For the "Matching Profile Retriever" component being RAG based it can be tested for the following metrics
 
-- Precision: evaluates how well the ranking workes based on the input and if reranking is needed.
+- Precision: evaluates how well the ranking works based on the input and if re-ranking is needed.
 - Recall: evaluates the embedding model on how accurate the retrieval is performed.
 - Relevance: evaluates the text chunking and top K of the retrieved results.
  
 
 #### Agent Evaluation
-Agent testing is different from RAG testing as it involves evaluating the agent's performance in a conversation. we can using the following metrics
+The agent "Interview Scheduling Assistant" testing is different from RAG testing as it involves evaluating the agent's performance in a conversation. We can use the following metrics for evaluation
 
 - Tools called & Expected tools: evaluating the order in which the tools are called by the agent to complete the task.
 - Completion Time: evaluating the time each agent takes to complete the task.
