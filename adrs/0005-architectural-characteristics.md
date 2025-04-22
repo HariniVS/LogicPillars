@@ -36,7 +36,7 @@ The top 3 driving characteristics for this system are:
 
 * **Interoperability:**
     * **Rationale:** The system needs to integrate with various external systems such as InterviewLogger,
-      Calendar Hub, and other HR tools. Interoperability ensures that the system can seamlessly
+      Calendar System, and other HR tools. Interoperability ensures that the system can seamlessly
       exchange data and work effectively with these systems.
     * **Consequences:**
         * Seamless integration with existing systems, efficient data exchange, and streamlined

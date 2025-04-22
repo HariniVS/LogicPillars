@@ -113,7 +113,7 @@ For a more detailed report on the different iterations, business flows, and the 
 matching and scheduling interactions. Any delays introduced by AI/LLM components should be gracefully handled with 
 fallback messaging or loading states.
 * Scalability - The platform must be able to scale horizontally to handle increases in usage during hiring spikes. Key services like embedding processing, match-making, and scheduling should support autoscaling.
-* Fault Tolerance & Graceful Degradation - Failures in external dependencies (e.g., Calendar Hub, InterviewLogger, LLM API) 
+* Fault Tolerance & Graceful Degradation - Failures in external dependencies (e.g., Calendar System, InterviewLogger, LLM API) 
 should not break core workflows. The system should degrade gracefully, offering partial functionality or fallback flows.
 * Auditability & Traceability - AI-generated decisions (e.g., interviewer matching) should be traceable with supporting 
 metadata and reasoning. System actions (e.g., schedule created, invite rejected) must be logged and auditable.
@@ -137,14 +137,14 @@ practices.
     - Email will be the primary communication method for both interviewers and interviewees.
     - Slot preferences, interview capacity and availability will be managed via MindComputeScheduler or an equivalent scheduling tool.
   * All interview invites will be sent from a generic system-owned email ID (e.g., recruitment-tw-noreply@gmail.com).
-    This email ID will be used to create and manage calendar events, and will have Calendar Hub webhooks configured to
+    This email ID will be used to create and manage calendar events, and will have Calendar System webhooks configured to
     listen for acceptance or rejection responses from both interviewees and interviewers.
   * OpenTelemetry (otel) agent will be attached to all deployed services to enable standardized metrics, traces, and logs collection.
     This ensures the system is observable and supports effective monitoring, debugging, and performance analysis across environments.
 * Constraints:
   * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
-  * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
-    InterviewLogger, or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
+  * Automatic matching limitation during external system failures - If external systems like Calendar System,
+    InterviewLogger, or Leave Management System are unavailable, the platform may not be able to perform automatic match-making or scheduling.
     In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
   * Limited explain-ability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
     (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
@@ -202,7 +202,7 @@ external systems, users, and its surrounding ecosystem.
 
 This container architecture outlines the HireIQ matching and scheduling system, breaking down key systems like 
 interview management, LangFlow-based AI orchestration, embedding pipelines, and observability.
-It shows how external systems like InterviewLogger, Calendar Hub, and LLM providers integrate with internal services to 
+It shows how external systems like InterviewLogger, Calendar System, and LLM providers integrate with internal services to 
 automate match-making and scheduling workflows.
 
 [📦 View Container Architecture Summary](architecture/pages/c4-container.md)

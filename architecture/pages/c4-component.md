@@ -54,7 +54,7 @@ scheduling system. It covers scheduling automation, LangFlow-based agents, vecto
 
 ![Interview Invite Handling](../c4-external-invites-handling.png)
 
-- Interview Service sends out calendar invites via Calendar Hub API.
+- Interview Service sends out calendar invites via Calendar System API.
 - Webhooks notify the system on accept/reject actions.
 - Events are processed to update the interview status in the DB and sync with InterviewLogger.
 - Ensures round progression is tightly coupled with calendar status.
