@@ -144,7 +144,7 @@ practices.
 * Constraints:
   * Limited control over external LLMs in terms of latency, downtime. Need explicit handling of rate limits and cost constraints
   * Automatic matching limitation during external system failures - If external systems like Calendar Hub,
-    InterviewLogger, or Leave Management System are unavailable, the platform may not be able to perform automatic match-making or scheduling.
+    InterviewLogger, MindComputeScheduler or MyMindLeave are unavailable, the platform may not be able to perform automatic match-making or scheduling.
     In such cases, fallback mechanisms (like manual intervention) will need to be taken by recruiters.
   * Limited explain-ability in AI-driven scheduling - Since match-making and scheduling decisions are influenced by AI agents
     (e.g., LLMs and vector-based retrieval), the reasoning behind certain decisions may not always be fully explainable in
