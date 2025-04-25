@@ -17,9 +17,9 @@ as depicted in the C4 container diagram.
 
 ## 🌐 External Systems
 
-- **Auth Module** – Authenticates users into the platform
+- **Authenticator** – Authenticates users into the platform
 - **InterviewLogger** – Supplies candidate data, interview round progression, and new candidate webhook triggers
-- **Calendar System** – Handles event creation and webhooks for responses
+- **Calendar Hub** – Handles event creation and webhooks for responses
 - **MyMindComputeProfile** – Streams profile data changes for embedding
 - **MindComputeScheduler / MyMindLeave** – Provides interviewer availability data
 
@@ -33,7 +33,7 @@ as depicted in the C4 container diagram.
         - New candidate added
         - Candidate advanced to next round
     - Triggers **automatic interviewer matching** via LangFlow
-    - Calls Calendar System APIs to schedule interviews
+    - Calls Calendar Hub APIs to schedule interviews
 - **Interview DB** – Stores interview lifecycle and participants information
 - **Event Bus** – Publishes interview updates and propagates them to other services
 
@@ -80,7 +80,7 @@ as depicted in the C4 container diagram.
 2. **Interview Service** receives the event, creates a draft interview, and:
     - Calls **LangFlow** to identify top matching interviewers based on profile vectors
     - Uses availability from **MyMindLeave / MindComputeScheduler**
-    - Schedules the interview using **Calendar System APIs**
+    - Schedules the interview using **Calendar Hub APIs**
 
 3. The result is:
     - Interview marked as "Scheduled" in the **Interview DB**
